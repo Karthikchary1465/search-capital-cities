@@ -2,331 +2,239 @@ import {Component} from 'react'
 
 import './index.css'
 
-const countryAndCapitalsList = [
+const statesAndCapitalsList = [
   {
-    id: 'NEW_DELHI',
-    capitalDisplayText: 'New Delhi',
-    country: 'India',
+    id: 'ANDHRA PRADESH',
+    stateDisplayText: 'Andhra Pradesh',
+    capital: 'Amaravathi',
+    language: 'Telugu',
   },
   {
-    id: 'LONDON',
-    capitalDisplayText: 'London',
-    country: 'United Kingdom',
+    id: 'ARUNACHAL PRADESH',
+    stateDisplayText: 'Arunachal Pradesh',
+    capital: 'Ita Nagar',
+    language: 'English',
   },
   {
-    id: 'PARIS',
-    capitalDisplayText: 'Paris',
-    country: 'France',
+    id: 'ASSAM',
+    stateDisplayText: 'Assam',
+    capital: 'Dispur',
+    language: 'Assamee',
   },
   {
-    id: 'KATHMANDU',
-    capitalDisplayText: 'Kathmandu',
-    country: 'Nepal',
+    id: 'BIHAR',
+    stateDisplayText: 'Bihar',
+    capital: 'Patna',
+    language: 'Hindi',
   },
   {
-    id: 'HELSINKI',
-    capitalDisplayText: 'Helsinki',
-    country: 'Finland',
+    id: 'UTTAR PRADESH',
+    stateDisplayText: 'Uttar Pradesh',
+    capital: 'Lucknow',
+    language: 'Hindi',
   },
   {
-    id: 'Moscow',
-    capitalDisplayText: 'Moscow',
-    country: 'Russia',
+    id: 'UTTARAKHAND',
+    stateDisplayText: 'Uttarakhand',
+    capital: 'Dehradun',
+    language: 'Hindi',
   },
   {
-    id: 'Brasilia',
-    capitalDisplayText: 'Brasilia',
-    country: 'Brazil',
+    id: 'PUNJAB',
+    stateDisplayText: 'Punjab',
+    capital: 'Chandigarh',
+    language: 'Punjabee',
   },
   {
-    id: 'Mexico City',
-    capitalDisplayText: 'Mexico City',
-    country: 'Mexico',
+    id: 'HIMACHAL PRADESH',
+    stateDisplayText: 'Himachal Pradesh',
+    capital: 'Shimla',
+    language: 'Hindi',
   },
   {
-    id: 'Ottawa',
-    capitalDisplayText: 'Ottawa',
-    country: 'Canada',
+    id: 'JAMMU & KASHMIR',
+    stateDisplayText: 'Jammu & Kashmir',
+    capital: 'Sri Nagar',
+    language: 'Urdu',
   },
   {
-    id: 'Washington D.C.',
-    capitalDisplayText: 'Washimgton D.C.',
-    country: 'United States of America',
+    id: 'HARYANA',
+    stateDisplayText: 'Haryana',
+    capital: 'Chandigarh',
+    language: 'Hindi',
   },
   {
-    id: 'Kiev',
-    capitalDisplayText: 'Kiev',
-    country: 'Ukraine',
+    id: 'JARKHAND',
+    stateDisplayText: 'Jarkhand',
+    capital: 'Ranchi',
+    language: 'Hindi',
   },
   {
-    id: 'Buenos Aires',
-    capitalDisplayText: 'Buenos Aires',
-    country: 'Argentina',
+    id: 'SIKKIM',
+    stateDisplayText: 'Sikkim',
+    capital: 'Gangtok',
+    language: 'Nepali,English',
   },
   {
-    id: 'Bogota',
-    capitalDisplayText: 'Bogota',
-    country: 'Colombia',
+    id: 'TRIPURA',
+    stateDisplayText: 'Tripura',
+    capital: 'Agartala',
+    language: 'Bengali',
   },
   {
-    id: 'Caracas',
-    capitalDisplayText: 'Caracas',
-    country: 'Venezuela',
+    id: 'MANIPUR',
+    stateDisplayText: 'Manipur',
+    capital: 'Imphal',
+    language: 'Manipuri',
   },
   {
-    id: 'Warsaw',
-    capitalDisplayText: 'Warsaw',
-    country: 'Poland',
+    id: 'MIJORAM',
+    stateDisplayText: 'Mijoram',
+    capital: 'Aizwal',
+    language: 'Mizo',
   },
   {
-    id: 'Berlin',
-    capitalDisplayText: 'Berlin',
-    country: 'Germany',
+    id: 'MEGHALAYA',
+    stateDisplayText: 'Meghalaya',
+    capital: 'Shillong',
+    language: 'Khasi',
   },
   {
-    id: 'Amsterdam',
-    capitalDisplayText: 'Amsterdam',
-    country: 'Netherlands',
+    id: 'NAGALAND',
+    stateDisplayText: 'Nagaland',
+    capital: 'Kohima',
+    language: 'English',
   },
   {
-    id: 'Copenhagen',
-    capitalDisplayText: 'Copenhagen',
-    country: 'Denmark',
+    id: 'WEST BENGAL',
+    stateDisplayText: 'West Bengal',
+    capital: 'Kolkata',
+    language: 'Bengali & Hindi',
   },
   {
-    id: 'Stockholm',
-    capitalDisplayText: 'Stockholm',
-    country: 'Sweden',
+    id: 'MADHYA PRADESH',
+    stateDisplayText: 'Madhya Pradesh',
+    capital: 'Bhopal',
+    language: 'Hindi',
   },
   {
-    id: 'Madrid',
-    capitalDisplayText: 'Madrid',
-    country: 'Spain',
+    id: 'CHATTISGARH',
+    stateDisplayText: 'Chattisgarh',
+    capital: 'RaiPur',
+    language: 'Hindi',
   },
   {
-    id: 'Brussels',
-    capitalDisplayText: 'Brussels',
-    country: 'Belgium',
+    id: 'RAJASTHAN',
+    stateDisplayText: 'Rajasthan',
+    capital: 'JaiPur',
+    language: 'Rajasthani & Hindi',
   },
   {
-    id: 'Vienna',
-    capitalDisplayText: 'Vienna',
-    country: 'Austria',
+    id: 'GUJARAT',
+    stateDisplayText: 'Gujarat',
+    capital: 'Ahmedabad',
+    language: 'Gujarati',
   },
   {
-    id: 'Rome',
-    capitalDisplayText: 'Rome',
-    country: 'Italy',
+    id: 'ODISHA',
+    stateDisplayText: 'Odisha',
+    capital: 'Bhubaneshwar',
+    language: 'Oriya',
   },
   {
-    id: 'Bern',
-    capitalDisplayText: 'Bern',
-    country: 'Switzerland',
+    id: 'TELANGANA',
+    stateDisplayText: 'Telangana',
+    capital: 'Hyderabad',
+    language: 'Telugu,Urdu & Hindi',
   },
   {
-    id: 'Lisbon',
-    capitalDisplayText: 'Lisbon',
-    country: 'Portugal',
+    id: 'MAHARASHTRA',
+    stateDisplayText: 'Maharashtra',
+    capital: 'Mumbai',
+    language: 'Marathi & Hindi',
   },
   {
-    id: 'Jerusalem',
-    capitalDisplayText: 'Jerusalem',
-    country: 'Israel',
+    id: 'KARNATAKA',
+    stateDisplayText: 'Karnataka',
+    capital: 'Bengaluru',
+    language: 'Kannada',
   },
   {
-    id: 'Tbilisi',
-    capitalDisplayText: 'Tbilisi',
-    country: 'Georgia',
+    id: 'TAMIL NADU',
+    stateDisplayText: 'Tamil nadu',
+    capital: 'Chennai',
+    language: 'Tamil',
   },
   {
-    id: 'Canberra',
-    capitalDisplayText: 'Canberra',
-    country: 'Australia',
-  },
-  {
-    id: 'Wellington',
-    capitalDisplayText: 'Wellington',
-    country: 'New zealand',
-  },
-  {
-    id: 'Seoul',
-    capitalDisplayText: 'Seoul',
-    country: 'South Korea',
-  },
-  {
-    id: 'Tokyo',
-    capitalDisplayText: 'Tokyo',
-    country: 'Japan',
-  },
-  {
-    id: 'Santiago',
-    capitalDisplayText: 'Santiago',
-    country: 'Chile',
-  },
-  {
-    id: 'Lima',
-    capitalDisplayText: 'Lima',
-    country: 'Peru',
-  },
-  {
-    id: 'La Paz',
-    capitalDisplayText: 'La Paz',
-    country: 'Bolivia',
-  },
-  {
-    id: 'Ankara',
-    capitalDisplayText: 'Ankara',
-    country: 'Turkey',
-  },
-  {
-    id: 'Minsk',
-    capitalDisplayText: 'Minsk',
-    country: 'Belarus',
-  },
-  {
-    id: 'Belgrade',
-    capitalDisplayText: 'Belgrade',
-    country: 'Serbia',
-  },
-  {
-    id: 'Athens',
-    capitalDisplayText: 'Athens',
-    country: 'Greece',
-  },
-  {
-    id: 'Kuala Lumpur',
-    capitalDisplayText: 'Kuala Lumpur',
-    country: 'Malaysia',
-  },
-  {
-    id: 'Singapore',
-    capitalDisplayText: 'Singapore',
-    country: 'Singapore',
-  },
-  {
-    id: 'Manila',
-    capitalDisplayText: 'Manila',
-    country: 'Philippines',
-  },
-  {
-    id: 'Jakarta',
-    capitalDisplayText: 'Jakarta',
-    country: 'Indonesia',
-  },
-  {
-    id: 'Tehran',
-    capitalDisplayText: 'Tehran',
-    country: 'Iran',
-  },
-  {
-    id: 'Abu Dhabi',
-    capitalDisplayText: 'Abu Dhabi',
-    country: 'United Arab Emirates',
-  },
-  {
-    id: 'Riyadh',
-    capitalDisplayText: 'Riyadh',
-    country: 'Saudi Arabia',
-  },
-  {
-    id: 'Luxembourg',
-    capitalDisplayText: 'Luxembourg',
-    country: 'Luxembourg',
-  },
-  {
-    id: 'Dublin',
-    capitalDisplayText: 'Dublin',
-    country: 'Ireland',
-  },
-  {
-    id: 'Taipei',
-    capitalDisplayText: 'Taipei',
-    country: 'Taiwan',
-  },
-  {
-    id: 'Bucharest',
-    capitalDisplayText: 'Bucharest',
-    country: 'Romania',
-  },
-  {
-    id: 'Quito',
-    capitalDisplayText: 'Quito',
-    country: 'Ecuador',
-  },
-  {
-    id: 'Havana',
-    capitalDisplayText: 'Havana',
-    country: 'Cuba',
-  },
-  {
-    id: 'Beijing',
-    capitalDisplayText: 'Beijing',
-    country: 'China',
-  },
-  {
-    id: 'Nur Sultan',
-    capitalDisplayText: 'Nur Sultan',
-    country: 'Kazakhsthan',
-  },
-  {
-    id: 'Manama',
-    capitalDisplayText: 'Manama',
-    country: 'Bahrain',
-  },
-  {
-    id: 'Doha',
-    capitalDisplayText: 'Doha',
-    country: 'Qatar',
+    id: 'KERALA',
+    stateDisplayText: 'Kerala',
+    capital: 'Trivendram',
+    language: 'Malayalam',
   },
 ]
 
 // Write your code here
 class Capitals extends Component {
   state = {
-    activeCapitalId: countryAndCapitalsList[0].id,
+    activeStateId: statesAndCapitalsList[0].id,
   }
 
-  onChangeCapital = event => {
-    this.setState({activeCapitalId: event.target.value})
+  onChangeState = event => {
+    this.setState({activeStateId: event.target.value})
   }
 
-  getCountry = () => {
-    const {activeCapitalId} = this.state
+  getCapital = () => {
+    const {activeStateId} = this.state
 
-    const activeCountryAndCapital = countryAndCapitalsList.find(
-      eachCapital => eachCapital.id === activeCapitalId,
+    const activeStateAndCapital = statesAndCapitalsList.find(
+      eachState => eachState.id === activeStateId,
     )
 
-    return activeCountryAndCapital.country
+    return activeStateAndCapital.capital
+  }
+
+  getLanguage = () => {
+    const {activeStateId} = this.state
+
+    const activeStateAndCapital = statesAndCapitalsList.find(
+      eachState => eachState.id === activeStateId,
+    )
+
+    return activeStateAndCapital.language
   }
 
   render() {
-    const {activeCapitalId} = this.state
-    const country = this.getCountry(activeCapitalId)
+    const {activeStateId} = this.state
+    const capital = this.getCapital(activeStateId)
+    const language = this.getLanguage(activeStateId)
 
     return (
       <div className="app-container">
         <div className="capitals-container">
-          <h1 className="heading">Countries And Capitals</h1>
+          <h1 className="heading">States And Capitals</h1>
           <div className="question-container">
             <select
               className="capital-select"
-              onChange={this.onChangeCapital}
-              value={activeCapitalId}
+              onChange={this.onChangeState}
+              value={activeStateId}
             >
-              {countryAndCapitalsList.map(eachCapital => (
+              {statesAndCapitalsList.map(eachState => (
                 <option
                   className="option"
-                  key={eachCapital.id}
-                  value={eachCapital.id}
+                  key={eachState.id}
+                  value={eachState.id}
                 >
-                  {eachCapital.capitalDisplayText}
+                  {eachState.stateDisplayText}
                 </option>
               ))}
             </select>
-            <p className="question">is Capital of which Country?</p>
+            <p className="question">is State of which Capital?</p>
           </div>
-          <p className="country">{country}</p>
+          <p className="country">{capital}</p>
+          <p className="country">language : {language}</p>
+          <div className="developer">
+            <p className="developer-name">Developed By : Karthik Chary</p>
+          </div>
         </div>
       </div>
     )
